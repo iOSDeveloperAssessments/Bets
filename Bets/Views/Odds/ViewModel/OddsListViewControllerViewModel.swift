@@ -10,7 +10,7 @@ import BetsCore
 
 class OddsListViewControllerViewModel {
   private let repository: BetRepository
-  var items: [Bet] = []
+  private (set) var items: [Bet] = []
   
   init(repository: BetRepository) {
     self.repository = repository
@@ -18,7 +18,7 @@ class OddsListViewControllerViewModel {
 }
 
 extension OddsListViewControllerViewModel {
-  func updateOdds() async throws -> [Bet] {
-    try await repository.updateOdds()
+  func updateOdds() async throws {
+    items = try await repository.updateOdds()
   }
 }
