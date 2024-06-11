@@ -10,9 +10,42 @@ class OddsListViewController: UIViewController, UICollectionViewDataSource {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    setupViewController()
+    
+    loadOdds()
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return viewModel?.items.count ?? .zero
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    guard let item = viewModel?.items[indexPath.item] else { return UICollectionViewListCell() }
+    let cell = list.dequeueReusableCell(withReuseIdentifier: "cell_id", for: indexPath) as? UICollectionViewListCell
+    var configuration = cell?.defaultContentConfiguration()
+    configuration?.text = item.name
+    cell?.contentConfiguration = configuration
+    
+    return cell ?? UICollectionViewListCell()
+  }
+}
+
+// MARK: - Setup View
+private extension OddsListViewController {
+  func setupViewController() {
     navigationItem.title = "Odds"
     
+    setupCollectionView()
+    setupActivityView()
+  }
+  
+  func setupCollectionView() {
     let configuration = UICollectionLayoutListConfiguration(appearance: .plain)
+    setupCollectionViewLayout(configuration: configuration)
+  }
+  
+  func setupCollectionViewLayout(configuration: UICollectionLayoutListConfiguration) {
     let layout = UICollectionViewCompositionalLayout.list(using: configuration)
     list = UICollectionView(frame: view.frame, collectionViewLayout: layout)
     
@@ -28,15 +61,26 @@ class OddsListViewController: UIViewController, UICollectionViewDataSource {
       list.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
       list.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
     ])
-    
+  }
+  
+  func setupActivityView() {
     activity = UIActivityIndicatorView(style: .medium)
+    setupActivityViewLayout()
+  }
+  
+  func setupActivityViewLayout() {
     activity.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(activity)
     NSLayoutConstraint.activate([
       activity.centerXAnchor.constraint(equalTo: view.centerXAnchor),
       activity.centerYAnchor.constraint(equalTo: view.centerYAnchor),
     ])
-    
+  }
+}
+
+// MARK: - Odds
+private extension OddsListViewController {
+  func loadOdds() {
     UIView.animate(withDuration: 1, animations: {
       self.list.isHidden = true
       self.activity.startAnimating()
@@ -56,19 +100,5 @@ class OddsListViewController: UIViewController, UICollectionViewDataSource {
         }
       }
     }
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return viewModel?.items.count ?? .zero
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let item = viewModel?.items[indexPath.item] else { return UICollectionViewListCell() }
-    let cell = list.dequeueReusableCell(withReuseIdentifier: "cell_id", for: indexPath) as? UICollectionViewListCell
-    var configuration = cell?.defaultContentConfiguration()
-    configuration?.text = item.name
-    cell?.contentConfiguration = configuration
-    
-    return cell ?? UICollectionViewListCell()
   }
 }
