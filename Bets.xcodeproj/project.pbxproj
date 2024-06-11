@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E929EC52C18708F00B2B64F /* OddsListViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E929EC42C18708F00B2B64F /* OddsListViewControllerViewModel.swift */; };
 		B5C0FD5C29E69206009AD7E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0FD5B29E69206009AD7E4 /* AppDelegate.swift */; };
 		B5C0FD5E29E69206009AD7E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0FD5D29E69206009AD7E4 /* SceneDelegate.swift */; };
 		B5C0FD6029E69206009AD7E4 /* OddsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0FD5F29E69206009AD7E4 /* OddsListViewController.swift */; };
@@ -62,6 +63,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4E929EC42C18708F00B2B64F /* OddsListViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddsListViewControllerViewModel.swift; sourceTree = "<group>"; };
 		B5C0FD5829E69206009AD7E4 /* Bets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C0FD5B29E69206009AD7E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5C0FD5D29E69206009AD7E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E929EC12C186DC300B2B64F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4E929EC22C186DCC00B2B64F /* Odds */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4E929EC22C186DCC00B2B64F /* Odds */ = {
+			isa = PBXGroup;
+			children = (
+				B5C0FD5F29E69206009AD7E4 /* OddsListViewController.swift */,
+				4E929EC32C186DF300B2B64F /* ViewModel */,
+			);
+			path = Odds;
+			sourceTree = "<group>";
+		};
+		4E929EC32C186DF300B2B64F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4E929EC42C18708F00B2B64F /* OddsListViewControllerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		B5C0FD4F29E69206009AD7E4 = {
 			isa = PBXGroup;
 			children = (
@@ -129,9 +156,9 @@
 		B5C0FD5A29E69206009AD7E4 /* Bets */ = {
 			isa = PBXGroup;
 			children = (
+				4E929EC12C186DC300B2B64F /* Views */,
 				B5C0FD5B29E69206009AD7E4 /* AppDelegate.swift */,
 				B5C0FD5D29E69206009AD7E4 /* SceneDelegate.swift */,
-				B5C0FD5F29E69206009AD7E4 /* OddsListViewController.swift */,
 				B5C0FD9429E69625009AD7E4 /* RemoteBetService.swift */,
 				B5C0FD6129E69206009AD7E4 /* Main.storyboard */,
 				B5C0FD6429E69208009AD7E4 /* Assets.xcassets */,
@@ -304,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E929EC52C18708F00B2B64F /* OddsListViewControllerViewModel.swift in Sources */,
 				B5C0FD6029E69206009AD7E4 /* OddsListViewController.swift in Sources */,
 				B5C0FD9529E69625009AD7E4 /* RemoteBetService.swift in Sources */,
 				B5C0FD5C29E69206009AD7E4 /* AppDelegate.swift in Sources */,
