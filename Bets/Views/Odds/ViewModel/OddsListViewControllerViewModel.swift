@@ -16,3 +16,9 @@ class OddsListViewControllerViewModel {
     self.repository = repository
   }
 }
+
+extension OddsListViewControllerViewModel {
+  func updateOdds() async throws -> [Bet] {
+    try await repository.updateOdds()
+  }
+}
