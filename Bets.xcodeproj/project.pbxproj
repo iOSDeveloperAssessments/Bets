@@ -111,6 +111,7 @@
 		4E929EC12C186DC300B2B64F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4E929EC62C188C2D00B2B64F /* Storyboard */,
 				4E929EC22C186DCC00B2B64F /* Odds */,
 			);
 			path = Views;
@@ -131,6 +132,40 @@
 				4E929EC42C18708F00B2B64F /* OddsListViewControllerViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4E929EC62C188C2D00B2B64F /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B5C0FD6129E69206009AD7E4 /* Main.storyboard */,
+				B5C0FD6629E69208009AD7E4 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		4E929EC72C188C4000B2B64F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B5C0FD6429E69208009AD7E4 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4E929EC82C188C9100B2B64F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B5C0FD9429E69625009AD7E4 /* RemoteBetService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		4E929EC92C188CA400B2B64F /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				B5C0FD5B29E69206009AD7E4 /* AppDelegate.swift */,
+				B5C0FD5D29E69206009AD7E4 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 		B5C0FD4F29E69206009AD7E4 = {
@@ -157,12 +192,9 @@
 			isa = PBXGroup;
 			children = (
 				4E929EC12C186DC300B2B64F /* Views */,
-				B5C0FD5B29E69206009AD7E4 /* AppDelegate.swift */,
-				B5C0FD5D29E69206009AD7E4 /* SceneDelegate.swift */,
-				B5C0FD9429E69625009AD7E4 /* RemoteBetService.swift */,
-				B5C0FD6129E69206009AD7E4 /* Main.storyboard */,
-				B5C0FD6429E69208009AD7E4 /* Assets.xcassets */,
-				B5C0FD6629E69208009AD7E4 /* LaunchScreen.storyboard */,
+				4E929EC82C188C9100B2B64F /* Service */,
+				4E929EC92C188CA400B2B64F /* Delegate */,
+				4E929EC72C188C4000B2B64F /* Resources */,
 				B5C0FD6929E69208009AD7E4 /* Info.plist */,
 			);
 			path = Bets;
