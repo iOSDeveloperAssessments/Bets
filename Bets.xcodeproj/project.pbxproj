@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B5C0FD5C29E69206009AD7E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0FD5B29E69206009AD7E4 /* AppDelegate.swift */; };
 		B5C0FD5E29E69206009AD7E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0FD5D29E69206009AD7E4 /* SceneDelegate.swift */; };
-		B5C0FD6029E69206009AD7E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0FD5F29E69206009AD7E4 /* ViewController.swift */; };
+		B5C0FD6029E69206009AD7E4 /* OddsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0FD5F29E69206009AD7E4 /* OddsListViewController.swift */; };
 		B5C0FD6329E69206009AD7E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5C0FD6129E69206009AD7E4 /* Main.storyboard */; };
 		B5C0FD6529E69208009AD7E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5C0FD6429E69208009AD7E4 /* Assets.xcassets */; };
 		B5C0FD6829E69208009AD7E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5C0FD6629E69208009AD7E4 /* LaunchScreen.storyboard */; };
@@ -65,7 +65,7 @@
 		B5C0FD5829E69206009AD7E4 /* Bets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C0FD5B29E69206009AD7E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5C0FD5D29E69206009AD7E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B5C0FD5F29E69206009AD7E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B5C0FD5F29E69206009AD7E4 /* OddsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddsListViewController.swift; sourceTree = "<group>"; };
 		B5C0FD6229E69206009AD7E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B5C0FD6429E69208009AD7E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5C0FD6729E69208009AD7E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -131,7 +131,7 @@
 			children = (
 				B5C0FD5B29E69206009AD7E4 /* AppDelegate.swift */,
 				B5C0FD5D29E69206009AD7E4 /* SceneDelegate.swift */,
-				B5C0FD5F29E69206009AD7E4 /* ViewController.swift */,
+				B5C0FD5F29E69206009AD7E4 /* OddsListViewController.swift */,
 				B5C0FD9429E69625009AD7E4 /* RemoteBetService.swift */,
 				B5C0FD6129E69206009AD7E4 /* Main.storyboard */,
 				B5C0FD6429E69208009AD7E4 /* Assets.xcassets */,
@@ -304,7 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5C0FD6029E69206009AD7E4 /* ViewController.swift in Sources */,
+				B5C0FD6029E69206009AD7E4 /* OddsListViewController.swift in Sources */,
 				B5C0FD9529E69625009AD7E4 /* RemoteBetService.swift in Sources */,
 				B5C0FD5C29E69206009AD7E4 /* AppDelegate.swift in Sources */,
 				B5C0FD5E29E69206009AD7E4 /* SceneDelegate.swift in Sources */,

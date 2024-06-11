@@ -1,7 +1,7 @@
 import UIKit
 import BetsCore
 
-class ViewController: UIViewController, UICollectionViewDataSource {
+class OddsListViewController: UIViewController, UICollectionViewDataSource {
     
     private var list: UICollectionView!
     private var activity: UIActivityIndicatorView!
@@ -63,12 +63,13 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         return items.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let item = items[indexPath.item]
-        let cell = list.dequeueReusableCell(withReuseIdentifier: "cell_id", for: indexPath) as? UICollectionViewListCell
-        var configuration = cell?.defaultContentConfiguration()
-        configuration?.text = item.name
-        cell?.contentConfiguration = configuration
-        return cell ?? UICollectionViewListCell()
-    }
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let item = items[indexPath.item]
+    let cell = list.dequeueReusableCell(withReuseIdentifier: "cell_id", for: indexPath) as? UICollectionViewListCell
+    var configuration = cell?.defaultContentConfiguration()
+    configuration?.text = item.name
+    cell?.contentConfiguration = configuration
+    
+    return cell ?? UICollectionViewListCell()
+  }
 }
