@@ -65,14 +65,16 @@ public class BetRepository {
 
         try await service.saveBets(bets)
         return bets
-    }
-  */
+    } */
+  
   public func updateOdds() async throws -> [Bet] {
-    let bets = try await service.loadBets()
+    var bets = try await service.loadBets()
     
-    let updatedBets = bets.map { OddsUpdater.update($0) }
+    // let updatedBets = bets.map { OddsUpdater.update($0) }
     
-    try await service.saveBets(updatedBets)
+    bets.updateEach { OddsUpdater.update(&$0) }
+    
+    try await service.saveBets(bets)
     
     return bets
   }

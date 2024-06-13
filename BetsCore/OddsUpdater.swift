@@ -9,14 +9,13 @@ import Foundation
 
 protocol Updater {
   associatedtype Updatable
-  static func update(_ updatable: Updatable) -> Updatable
+  static func update(_ updatable: (inout Updatable))
 }
 
 class OddsUpdater: Updater {
-  static func update(_ updatable: Bet) -> Bet {
-    .init(name: updatable.name,
-          sellIn: updatable.sellIn + updatable.variation.sellIn,
-          quality: updatable.quality + updatable.variation.quality,
-          variation: updatable.variation)
+  static func update(_ updatable: (inout Bet)) {
+    if let update = updatable.update {
+      update(&updatable)
+    }
   }
 }
