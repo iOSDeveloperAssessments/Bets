@@ -9,7 +9,7 @@ public class BetRepository {
     public init(service: BetService) {
         self.service = service
     }
-
+/*
     public func updateOdds() async throws -> [Bet] {
         var bets = try await service.loadBets()
         
@@ -66,4 +66,22 @@ public class BetRepository {
         try await service.saveBets(bets)
         return bets
     }
+  */
+  public func updateOdds() async throws -> [Bet] {
+    let bets = try await service.loadBets()
+    
+    let updatedBets = bets.map { OddsUpdater.update($0) }
+    
+    try await service.saveBets(updatedBets)
+    
+    return bets
+  }
+}
+
+extension MutableCollection {
+  mutating func updateEach(_ update: (inout Element) -> Void) {
+    for i in indices {
+      update(&self[i])
+    }
+  }
 }
