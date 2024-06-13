@@ -70,8 +70,6 @@ public class BetRepository {
   public func updateOdds() async throws -> [Bet] {
     var bets = try await service.loadBets()
     
-    // let updatedBets = bets.map { OddsUpdater.update($0) }
-    
     bets.updateEach { OddsUpdater.update(&$0) }
     
     try await service.saveBets(bets)
