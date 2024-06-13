@@ -7,6 +7,7 @@ actor RemoteBetService: BetService {
     
     private init() { }
     
+  /*
     private var bets: [Bet] = [
         Bet(name: "Winning team", sellIn: 8, quality: 15),
         Bet(name: "Total score", sellIn: 5, quality: 26),
@@ -25,6 +26,26 @@ actor RemoteBetService: BetService {
         Bet(name: "Number of aces", sellIn: 6, quality: 46),
         Bet(name: "Set score", sellIn: 9, quality: 12),
     ]
+   */
+  
+  private var bets: [Bet] = [
+    Bet(name: "Winning team", sellIn: 8, quality: 15, variation: (.zero, .zero)),
+    Bet(name: "Total score", sellIn: 5, quality: 26, variation: (.zero, .zero)),
+    Bet(name: "Player performance", sellIn: 9, quality: 4, variation: (.zero, .zero)),
+    Bet(name: "First goal scorer", sellIn: 10, quality: 49, variation: (.zero, .zero)),
+    Bet(name: "Number of fouls", sellIn: 4, quality: 21, variation: (.zero, .zero)),
+    Bet(name: "Corner kicks", sellIn: 9, quality: 32, variation: (.zero, .zero)),
+    Bet(name: "Yellow cards", sellIn: 0, quality: 45, variation: (.zero, .zero)),
+    Bet(name: "Red cards", sellIn: 2, quality: 11, variation: (.zero, .zero)),
+    Bet(name: "Offsides", sellIn: 2, quality: 14, variation: (.zero, .zero)),
+    Bet(name: "Penalties", sellIn: 4, quality: 10, variation: (.zero, .zero)),
+    Bet(name: "Half-time score", sellIn: 1, quality: 42, variation: (.zero, .zero)),
+    Bet(name: "Clean sheet", sellIn: 10, quality: 34, variation: (.zero, .zero)),
+    Bet(name: "Hat trick", sellIn: 9, quality: 32, variation: (.zero, .zero)),
+    Bet(name: "Number of sets won", sellIn: 8, quality: 17, variation: (.zero, .zero)),
+    Bet(name: "Number of aces", sellIn: 6, quality: 46, variation: (.zero, .zero)),
+    Bet(name: "Set score", sellIn: 9, quality: 12, variation: (.zero, .zero)),
+  ]
     
     func loadBets() async throws -> [Bet] {
         try await Task.sleep(nanoseconds: RemoteBetService.delay)
