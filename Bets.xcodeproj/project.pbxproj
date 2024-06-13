@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E929EC52C18708F00B2B64F /* OddsListViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E929EC42C18708F00B2B64F /* OddsListViewControllerViewModel.swift */; };
+		4E929ECD2C1AE09A00B2B64F /* OddsUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E929ECC2C1AE09A00B2B64F /* OddsUpdater.swift */; };
 		B5C0FD5C29E69206009AD7E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0FD5B29E69206009AD7E4 /* AppDelegate.swift */; };
 		B5C0FD5E29E69206009AD7E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0FD5D29E69206009AD7E4 /* SceneDelegate.swift */; };
 		B5C0FD6029E69206009AD7E4 /* OddsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0FD5F29E69206009AD7E4 /* OddsListViewController.swift */; };
@@ -64,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		4E929EC42C18708F00B2B64F /* OddsListViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddsListViewControllerViewModel.swift; sourceTree = "<group>"; };
+		4E929ECC2C1AE09A00B2B64F /* OddsUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddsUpdater.swift; sourceTree = "<group>"; };
 		B5C0FD5829E69206009AD7E4 /* Bets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C0FD5B29E69206009AD7E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5C0FD5D29E69206009AD7E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				B5C0FD7629E694E0009AD7E4 /* BetsCore.h */,
 				B5C0FD9029E6950A009AD7E4 /* BetsRepository.swift */,
 				B5C0FD9229E69531009AD7E4 /* Bet.swift */,
+				4E929ECC2C1AE09A00B2B64F /* OddsUpdater.swift */,
 			);
 			path = BetsCore;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 			files = (
 				B5C0FD9129E6950A009AD7E4 /* BetsRepository.swift in Sources */,
 				B5C0FD9329E69531009AD7E4 /* Bet.swift in Sources */,
+				4E929ECD2C1AE09A00B2B64F /* OddsUpdater.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
