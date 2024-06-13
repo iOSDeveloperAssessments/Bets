@@ -6,52 +6,68 @@ actor RemoteBetService: BetService {
     public static let instance = RemoteBetService()
     
     private init() { }
-    /*
-    private var bets: [Bet] = [
-        Bet(name: "Winning team", sellIn: 8, quality: 15),
-        Bet(name: "Total score", sellIn: 5, quality: 26),
-        Bet(name: "Player performance", sellIn: 9, quality: 4),
-        Bet(name: "First goal scorer", sellIn: 10, quality: 49),
-        Bet(name: "Number of fouls", sellIn: 4, quality: 21),
-        Bet(name: "Corner kicks", sellIn: 9, quality: 32),
-        Bet(name: "Yellow cards", sellIn: 0, quality: 45),
-        Bet(name: "Red cards", sellIn: 2, quality: 11),
-        Bet(name: "Offsides", sellIn: 2, quality: 14),
-        Bet(name: "Penalties", sellIn: 4, quality: 10),
-        Bet(name: "Half-time score", sellIn: 1, quality: 42),
-        Bet(name: "Clean sheet", sellIn: 10, quality: 34),
-        Bet(name: "Hat trick", sellIn: 9, quality: 32),
-        Bet(name: "Number of sets won", sellIn: 8, quality: 17),
-        Bet(name: "Number of aces", sellIn: 6, quality: 46),
-        Bet(name: "Set score", sellIn: 9, quality: 12),
-    ] */
   
+  /// 1. Just add new bets
   private var bets: [Bet] = [
     Bet(name: "Winning team", sellIn: 8, quality: 15),
     Bet(name: "Total score", sellIn: 5, quality: 26) { bet in
       if bet.quality < 50 {
-        bet.quality = bet.quality + 1
-        if bet.sellIn < 11 && bet.quality < 50 { bet.quality = bet.quality + 1 }
-        if bet.sellIn < 6 && bet.quality < 50 { bet.quality = bet.quality + 1 }
+        bet.quality += 1
+        if bet.sellIn < 11 && bet.quality < 50 { bet.quality += 1 }
+        if bet.sellIn < 6 && bet.quality < 50 { bet.quality += 1 }
       }
-      bet.sellIn = bet.sellIn - 1
-      if bet.sellIn < 0 { bet.quality = bet.quality - bet.quality }
+      bet.sellIn -= 1
+      if bet.sellIn < 0 { bet.quality = .zero }
     },
-    Bet(name: "Player performance", sellIn: 9, quality: 4),
-    Bet(name: "First goal scorer", sellIn: 10, quality: 49),
-    Bet(name: "Number of fouls", sellIn: 4, quality: 21),
-    Bet(name: "Corner kicks", sellIn: 9, quality: 32),
-    Bet(name: "Yellow cards", sellIn: 0, quality: 45),
-    Bet(name: "Red cards", sellIn: 2, quality: 11),
-    Bet(name: "Offsides", sellIn: 2, quality: 14),
-    Bet(name: "Penalties", sellIn: 4, quality: 10),
-    Bet(name: "Half-time score", sellIn: 1, quality: 42),
-    Bet(name: "Clean sheet", sellIn: 10, quality: 34),
-    Bet(name: "Hat trick", sellIn: 9, quality: 32),
-    Bet(name: "Number of sets won", sellIn: 8, quality: 17),
-    Bet(name: "Number of aces", sellIn: 6, quality: 46),
-    Bet(name: "Set score", sellIn: 9, quality: 12),
+    Bet(name: "Player performance", sellIn: 9, quality: 4) { bet in
+      if bet.quality < 50 { bet.quality += 1 }
+      bet.sellIn -= 1
+      if bet.sellIn < 0 && bet.quality < 50 { bet.quality += 1 }
+    },
+    Bet(name: "First goal scorer", sellIn: 10, quality: 49) { bet in
+      if bet.quality > 0 { bet.quality -= 1 }
+      bet.sellIn -= 1
+      if bet.sellIn < 0 && bet.quality > 0 { bet.quality -= 1 }
+    },
+    Bet(name: "Number of fouls", sellIn: 4, quality: 21) { bet in
+      // TODO: Add update rules as previous bets
+    },
+    Bet(name: "Corner kicks", sellIn: 9, quality: 32) { bet in
+      // TODO: Add update rules as previous bets
+    },
+    Bet(name: "Yellow cards", sellIn: 0, quality: 45) { bet in
+      // TODO: Add update rules as previous bets
+    },
+    Bet(name: "Red cards", sellIn: 2, quality: 11) { bet in
+      // TODO: Add update rules as previous bets
+    },
+    Bet(name: "Offsides", sellIn: 2, quality: 14) { bet in
+      // TODO: Add update rules as previous bets
+    },
+    Bet(name: "Penalties", sellIn: 4, quality: 10) { bet in
+      // TODO: Add update rules as previous bets
+    },
+    Bet(name: "Half-time score", sellIn: 1, quality: 42) { bet in
+      // TODO: Add update rules as previous bets
+    },
+    Bet(name: "Clean sheet", sellIn: 10, quality: 34) { bet in
+      // TODO: Add update rules as previous bets
+    },
+    Bet(name: "Hat trick", sellIn: 9, quality: 32) { bet in
+      // TODO: Add update rules as previous bets
+    },
+    Bet(name: "Number of sets won", sellIn: 8, quality: 17) { bet in
+      // TODO: Add update rules as previous bets
+    },
+    Bet(name: "Number of aces", sellIn: 6, quality: 46) { bet in
+      // TODO: Add update rules as previous bets
+    },
+    Bet(name: "Set score", sellIn: 9, quality: 12) { bet in
+      // TODO: Add update rules as previous bets
+    },
   ]
+  
+  /// 2. Use of a factory
     
     func loadBets() async throws -> [Bet] {
         try await Task.sleep(nanoseconds: RemoteBetService.delay)
