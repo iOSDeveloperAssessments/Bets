@@ -68,6 +68,7 @@ actor RemoteBetService: BetService {
   ]
   
   /// 2. Factory pattern
+  /*
   private var betsFromFactory: [Bet] = [
     BetFactory.for(.winningTeam).create(),
     BetFactory.for(.totalScore).create(),
@@ -85,11 +86,11 @@ actor RemoteBetService: BetService {
     BetFactory.for(.numberOfSetsWon).create(),
     BetFactory.for(.numberOfAces).create(),
     BetFactory.for(.setScore).create()
-  ]
+  ] */
   
   func loadBets() async throws -> [Bet] {
     try await Task.sleep(nanoseconds: RemoteBetService.delay)
-    return betsFromFactory // bets
+    return bets
   }
   
   func saveBets(_ bets: [Bet]) async throws {

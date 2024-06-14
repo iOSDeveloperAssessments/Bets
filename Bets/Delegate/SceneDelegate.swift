@@ -16,7 +16,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     let navigationViewController = UIStoryboard(name: "Main", bundle: .none).instantiateInitialViewController() as? UINavigationController
     
-    (navigationViewController?.topViewController as? OddsListViewController)?.viewModel = .init(repository: BetRepository(service: RemoteBetService.instance))
+    let repository = BetRepository(service: RemoteBetService.instance, updater: OddsUpdater())
+    (navigationViewController?.topViewController as? OddsListViewController)?.viewModel = .init(repository: repository)
     
     window.rootViewController = navigationViewController
     self.window = window

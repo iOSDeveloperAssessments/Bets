@@ -1,4 +1,3 @@
-public typealias OddVariation = (sellIn: Int, quality: Int)
 public typealias OddsUpdateAction = (inout Bet) -> Void
 
 public struct Bet {

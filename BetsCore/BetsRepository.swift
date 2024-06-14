@@ -4,11 +4,13 @@ public protocol BetService {
 }
 
 public class BetRepository {
-    private let service: BetService
-
-    public init(service: BetService) {
-        self.service = service
-    }
+  private let service: BetService
+  private let oddsUpdater: OddsUpdatable
+  
+  public init(service: BetService, updater: OddsUpdatable) {
+    self.service = service
+    self.oddsUpdater = updater
+  }
 /*
     public func updateOdds() async throws -> [Bet] {
         var bets = try await service.loadBets()
@@ -70,7 +72,7 @@ public class BetRepository {
   public func updateOdds() async throws -> [Bet] {
     var bets = try await service.loadBets()
     
-    bets.updateEach { OddsUpdater.update(&$0) }
+    bets.updateEach { self.oddsUpdater.update(&$0) }
     
     try await service.saveBets(bets)
     

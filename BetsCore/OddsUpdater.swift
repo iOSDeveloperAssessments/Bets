@@ -7,15 +7,16 @@
 
 import Foundation
 
-protocol Updater {
-  associatedtype Updatable
-  static func update(_ updatable: (inout Updatable))
+public protocol OddsUpdatable {
+  func update(_ Bet: (inout Bet))
 }
 
-class OddsUpdater: Updater {
-  static func update(_ updatable: (inout Bet)) {
-    if let update = updatable.update {
-      update(&updatable)
-    }
+public extension OddsUpdatable {
+  func update(_ updatable: (inout Bet)) {
+    if let update = updatable.update { update(&updatable) }
   }
+}
+
+public class OddsUpdater: OddsUpdatable {
+  public init() {}
 }
