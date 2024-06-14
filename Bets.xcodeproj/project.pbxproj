@@ -13,6 +13,7 @@
 		4E929EE82C1C82A500B2B64F /* OddsListViewControllerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E929EE72C1C82A500B2B64F /* OddsListViewControllerViewModelTests.swift */; };
 		4E929EFB2C1C8A0B00B2B64F /* BetRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E929EFA2C1C8A0B00B2B64F /* BetRepositoryTests.swift */; };
 		4E929F012C1C930900B2B64F /* RemoteBetServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E929F002C1C930900B2B64F /* RemoteBetServiceTests.swift */; };
+		4E929F042C1C98AA00B2B64F /* BetFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E929F032C1C98AA00B2B64F /* BetFactoryTests.swift */; };
 		B5C0FD5C29E69206009AD7E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0FD5B29E69206009AD7E4 /* AppDelegate.swift */; };
 		B5C0FD5E29E69206009AD7E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0FD5D29E69206009AD7E4 /* SceneDelegate.swift */; };
 		B5C0FD6029E69206009AD7E4 /* OddsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C0FD5F29E69206009AD7E4 /* OddsListViewController.swift */; };
@@ -68,6 +69,7 @@
 		4E929EF82C1C867200B2B64F /* BetRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetRepositoryTests.swift; sourceTree = "<group>"; };
 		4E929EFA2C1C8A0B00B2B64F /* BetRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetRepositoryTests.swift; sourceTree = "<group>"; };
 		4E929F002C1C930900B2B64F /* RemoteBetServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteBetServiceTests.swift; sourceTree = "<group>"; };
+		4E929F032C1C98AA00B2B64F /* BetFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetFactoryTests.swift; sourceTree = "<group>"; };
 		B5C0FD5829E69206009AD7E4 /* Bets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C0FD5B29E69206009AD7E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5C0FD5D29E69206009AD7E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -231,9 +233,18 @@
 		4E929EFF2C1C927100B2B64F /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				4E929F022C1C989500B2B64F /* Factory */,
 				4E929F002C1C930900B2B64F /* RemoteBetServiceTests.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		4E929F022C1C989500B2B64F /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				4E929F032C1C98AA00B2B64F /* BetFactoryTests.swift */,
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 		B5C0FD4F29E69206009AD7E4 = {
@@ -427,6 +438,7 @@
 			files = (
 				4E929EFB2C1C8A0B00B2B64F /* BetRepositoryTests.swift in Sources */,
 				4E929F012C1C930900B2B64F /* RemoteBetServiceTests.swift in Sources */,
+				4E929F042C1C98AA00B2B64F /* BetFactoryTests.swift in Sources */,
 				4E929EE82C1C82A500B2B64F /* OddsListViewControllerViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
