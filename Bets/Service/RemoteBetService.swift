@@ -67,15 +67,33 @@ actor RemoteBetService: BetService {
     },
   ]
   
-  /// 2. Use of a factory
-    
-    func loadBets() async throws -> [Bet] {
-        try await Task.sleep(nanoseconds: RemoteBetService.delay)
-        return bets
-    }
-    
-    func saveBets(_ bets: [Bet]) async throws {
-        try await Task.sleep(nanoseconds: RemoteBetService.delay)
-        self.bets = bets
-    }
+  /// 2. Factory pattern
+  private var betsFromFactory: [Bet] = [
+    BetFactory.for(.winningTeam).create(),
+    BetFactory.for(.totalScore).create(),
+    BetFactory.for(.playerPerformance).create(),
+    BetFactory.for(.firstGoalScorer).create(),
+    BetFactory.for(.numberOfFouls).create(),
+    BetFactory.for(.cornerKicks).create(),
+    BetFactory.for(.yellowCards).create(),
+    BetFactory.for(.redCards).create(),
+    BetFactory.for(.offsides).create(),
+    BetFactory.for(.penalties).create(),
+    BetFactory.for(.halfTimeScore).create(),
+    BetFactory.for(.cleanSheet).create(),
+    BetFactory.for(.hatTrick).create(),
+    BetFactory.for(.numberOfSetsWon).create(),
+    BetFactory.for(.numberOfAces).create(),
+    BetFactory.for(.setScore).create()
+  ]
+  
+  func loadBets() async throws -> [Bet] {
+    try await Task.sleep(nanoseconds: RemoteBetService.delay)
+    return betsFromFactory // bets
+  }
+  
+  func saveBets(_ bets: [Bet]) async throws {
+    try await Task.sleep(nanoseconds: RemoteBetService.delay)
+    self.bets = bets
+  }
 }
