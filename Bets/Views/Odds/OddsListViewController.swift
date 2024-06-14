@@ -6,7 +6,7 @@ class OddsListViewController: UIViewController, UICollectionViewDataSource {
   private var list: UICollectionView!
   private var activity: UIActivityIndicatorView!
   
-  let viewModel: OddsListViewControllerViewModel? = .init(repository: BetRepository(service: RemoteBetService.instance))
+  var viewModel: OddsListViewControllerViewModel?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -25,6 +25,7 @@ class OddsListViewController: UIViewController, UICollectionViewDataSource {
     let cell = list.dequeueReusableCell(withReuseIdentifier: "cell_id", for: indexPath) as? UICollectionViewListCell
     var configuration = cell?.defaultContentConfiguration()
     configuration?.text = item.name
+    configuration?.secondaryText = "\(item.sellIn) | \(item.quality)"
     cell?.contentConfiguration = configuration
     
     return cell ?? UICollectionViewListCell()
