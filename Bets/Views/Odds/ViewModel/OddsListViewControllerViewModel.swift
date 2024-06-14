@@ -9,10 +9,10 @@ import Foundation
 import BetsCore
 
 class OddsListViewControllerViewModel {
-  private let repository: BetRepository
+  private let repository: Repository
   private (set) var items: [Bet] = []
   
-  init(repository: BetRepository) {
+  init(repository: Repository) {
     self.repository = repository
   }
 }

@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "AB72600B-0A05-4AAC-9821-1975EA2984C4",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Bets.xcodeproj",
+      "identifier" : "B5C0FD5729E69206009AD7E4",
+      "name" : "Bets"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Bets.xcodeproj",
+        "identifier" : "4E929EDC2C1C7CBD00B2B64F",
+        "name" : "BetsTests"
+      }
+    }
+  ],
+  "version" : 1
+}

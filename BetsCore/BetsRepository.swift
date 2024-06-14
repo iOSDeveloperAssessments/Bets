@@ -1,9 +1,13 @@
 public protocol BetService {
-    func loadBets() async throws -> [Bet]
-    func saveBets(_ bets: [Bet]) async throws
+  func loadBets() async throws -> [Bet]
+  func saveBets(_ bets: [Bet]) async throws
 }
 
-public class BetRepository {
+public protocol Repository {
+  func updateOdds() async throws -> [Bet]
+}
+
+public class BetRepository: Repository {
   private let service: BetService
   private let oddsUpdater: OddsUpdatable
   

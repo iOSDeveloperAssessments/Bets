@@ -1,30 +1,31 @@
 //
 //  OddsListViewControllerViewModelTests.swift
-//  BetsCoreTests
+//  BetsTests
 //
 //  Created by David Alarcon on 14/6/24.
 //
 
 import XCTest
-@testable import BetsCore
+import BetsCore
 @testable import Bets
 
 final class OddsListViewControllerViewModelTests: XCTestCase {
-
-    func testUpdateOdds() async throws {
-      let updater = TestUpdaterSpy()
-
-      let sut = OddsListViewControllerViewModel(repository: .init(service: RemoteBetService.instance, updater: updater))
-      
-      try await sut.updateOdds()
-      
-      XCTAssertTrue(updater.updateCalled)
-    }
+  
+  func testUpdateOdds() async throws {
+    let repository = TestBetRepositorySpy()
+    let sut = OddsListViewControllerViewModel(repository: repository)
+    
+    try await sut.updateOdds()
+    
+    XCTAssertTrue(repository.updateOddsCalled)
+  }
 }
 
-class TestUpdaterSpy: OddsUpdatable {
-  var updateCalled = false
-  func update(_ Bet: inout (Bet)) {
-    updateCalled = true
+class TestBetRepositorySpy: Repository {
+  var updateOddsCalled = false
+  func updateOdds() async throws -> [Bet] {
+    updateOddsCalled = true
+    
+    return []
   }
 }
